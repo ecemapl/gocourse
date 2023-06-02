@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 // Función que devuelve el signo de su argumento
 // (-1 si es negativo, +1 si es positivo, y 0 en cualquier otro caso)
@@ -60,6 +63,19 @@ func multiploTres(number int) bool {
 	}
 }
 
+// Funcion que resuelve ecuacion de segundo grado
+func ecuacionSegundoGrado(a, b, c int) (float64, float64) {
+	var parteRaiz float64
+	var result1, result2 float64
+
+	parteRaiz = math.Sqrt(float64(b*b - 4*a*c))
+
+	result1 = (-float64(b) + parteRaiz) / float64(2*a)
+	result2 = (-float64(b) - parteRaiz) / float64(2*a)
+
+	return result1, result2
+}
+
 func main() {
 	fmt.Println(devuelveSigno(10))
 	fmt.Println(devuelveSigno(-1))
@@ -84,4 +100,9 @@ func main() {
 	} else {
 		fmt.Println("129 no es multiplo de 3")
 	}
+
+	// Resuelve ecuacion segundo grado
+	a, b, c := 2, 4, 1
+	d, e := ecuacionSegundoGrado(a, b, c)
+	fmt.Printf("Las soluciones de %dx^2+%dx+%d son %f y %f\n", a, b, c, d, e)
 }
