@@ -76,6 +76,15 @@ func ecuacionSegundoGrado(a, b, c int) (float64, float64) {
 	return result1, result2
 }
 
+// Funcion que invierte una cadena, por ejemplo "perro" queda transformado en "orrep"
+func invierteCadena(input string) string {
+	var final = make([]byte, len(input))
+	for i, j := 0, len(input)-1; i <= len(input)/2; i, j = i+1, j-1 {
+		final[i], final[j] = input[j], input[i]
+	}
+	return string(final)
+}
+
 func main() {
 	fmt.Println(devuelveSigno(10))
 	fmt.Println(devuelveSigno(-1))
@@ -105,4 +114,13 @@ func main() {
 	a, b, c := 2, 4, 1
 	d, e := ecuacionSegundoGrado(a, b, c)
 	fmt.Printf("Las soluciones de %dx^2+%dx+%d son %f y %f\n", a, b, c, d, e)
+
+	// Determina si una cadena es un palindromo
+	var cadena string = "Hola!"
+	fmt.Println(invierteCadena(cadena))
+	if cadena == invierteCadena(cadena) {
+		fmt.Printf("%s es un palindromo\n", cadena)
+	} else {
+		fmt.Printf("%s no es un palindromo\n", cadena)
+	}
 }
