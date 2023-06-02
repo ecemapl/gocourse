@@ -13,19 +13,8 @@ func getMin(a, b int) int {
 
 // Representa la tabla de multiplicar del numero indicado entre 1 y 10
 func tablaMultiplicar(n int) {
-	for i := 0; i <= 9; i++ {
+	for i := 0; i <= 10; i++ {
 		fmt.Printf("%2d x %2d = %4d\n", i, n, i*n)
-	}
-}
-
-// Suma los digitos de un numero
-func sumaDigits(n int) {
-	switch {
-	case n < 10:
-		return n
-
-	default:
-
 	}
 }
 
