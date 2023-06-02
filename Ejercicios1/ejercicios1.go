@@ -36,6 +36,30 @@ func imprimeTablaMultiplicar(a int) {
 	}
 }
 
+// Funcion que calcula la suma de los digitos de un numero
+func sumDigits(number int) int {
+	sum := 0
+
+	for number > 0 {
+		digit := number % 10
+		sum += digit
+		number /= 10
+	}
+
+	return sum
+}
+
+// Funcion que devuelve true de un numero es multiplo de 3
+func multiploTres(number int) bool {
+	sum := sumDigits(number)
+
+	if sum%3 == 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
 func main() {
 	fmt.Println(devuelveSigno(10))
 	fmt.Println(devuelveSigno(-1))
@@ -46,4 +70,18 @@ func main() {
 
 	// Imprime la tabla de multiplicar del argumento
 	imprimeTablaMultiplicar(7)
+
+	// Determina si un numero es multiplo de 3, para ello la suma de sus cifras tiene que ser multiplo de 3
+	// 128 no es multiplo de 3
+	if multiploTres(128) {
+		fmt.Println("128 es multiplo de 3")
+	} else {
+		fmt.Println("128 no es multiplo de 3")
+	}
+	// 129 si es multiplo de 3
+	if multiploTres(129) {
+		fmt.Println("129 es multiplo de 3")
+	} else {
+		fmt.Println("129 no es multiplo de 3")
+	}
 }
