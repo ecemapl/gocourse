@@ -29,6 +29,13 @@ func sumaMultiplos3y5no15(a, b int) int {
 	return suma
 }
 
+// Funcion que imprime la tabla de multiplicar del numero que se da como argumento
+func imprimeTablaMultiplicar(a int) {
+	for i := 0; i <= 10; i++ {
+		fmt.Printf("%2d x %2d = %d\n", a, i, a*i)
+	}
+}
+
 func main() {
 	fmt.Println(devuelveSigno(10))
 	fmt.Println(devuelveSigno(-1))
@@ -36,4 +43,7 @@ func main() {
 
 	// Imprime suma de multiplos de 3 y de 5 pero no de 15 entre 0 y 300000
 	fmt.Printf("La suma de multiplos de 3 y 5, pero no de 15, entre %d y %d es %d\n", 0, 300000, sumaMultiplos3y5no15(0, 300000))
+
+	// Imprime la tabla de multiplicar del argumento
+	imprimeTablaMultiplicar(7)
 }
