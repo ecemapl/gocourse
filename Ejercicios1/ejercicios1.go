@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"gocourse/bitmap"
 	"math"
 )
 
@@ -123,4 +124,19 @@ func main() {
 	} else {
 		fmt.Printf("%s no es un palindromo\n", cadena)
 	}
+	var cadena2 string = "tonot"
+	fmt.Println(invierteCadena(cadena2))
+	if cadena2 == invierteCadena(cadena2) {
+		fmt.Printf("%s es un palindromo\n", cadena2)
+	} else {
+		fmt.Printf("%s no es un palindromo\n", cadena2)
+	}
+
+	// Prueba del bitmap
+	// Creo un bitmap de 8 bits (está inicializado al valor "0" que en ASCII es un 48: 00110000)
+	var cadena3 string = bitmap.NewBitmap(8)
+	bitmap.PrintBitmap(cadena3)
+	fmt.Printf("El bit en la posicion 2 es %s\n", string(bitmap.ReadBit(cadena3, 2)))
+	fmt.Printf("El bit en la posicion 4 es %s\n", string(bitmap.ReadBit(cadena3, 4)))
+
 }
