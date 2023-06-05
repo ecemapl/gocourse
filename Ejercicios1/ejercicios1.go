@@ -65,6 +65,9 @@ func multiploTres(number int) bool {
 }
 
 // Funcion que resuelve ecuacion de segundo grado
+// OJO: el programa de abajo está mal porque el resultado puede ser complejo
+// hay una libreria llamada cmplx.Sqrt, usar la construccion complex(a,b)
+// hay que manejar la conversion de tipos explicitamente
 func ecuacionSegundoGrado(a, b, c int) (float64, float64) {
 	var parteRaiz float64
 	var result1, result2 float64
