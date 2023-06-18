@@ -21,8 +21,8 @@ func NewBitmap(length int) string {
 	//var bitmap string = make([]byte, numBytes)
 
 	//Ha sido raro para inicializar a 0 (sacado de https://golangdocs.com/strings-in-golang)
-	//return strings.Repeat(string([]rune{0x0000}), numBytes)
-	return strings.Repeat("0", numBytes)
+	//return strings.Repeat(string([]rune{0x0000}), numBytes) // Esta inicializa a cero de verdad
+	return strings.Repeat("0", numBytes) // Estas es para probar porque "0" se mapea a un 48 en binario
 
 }
 
