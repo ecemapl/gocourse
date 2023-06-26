@@ -9,7 +9,7 @@ import (
 
 func main() {
 	//var numCores int = runtime.NumCPU()
-	var numCores int = 4
+	var numCores int = 12
 	var n uint64 = 500000000 //Número de puntos por gorutina
 	var nPuntosDentro = make([]uint64, numCores)
 	var nPuntosDentroTotal uint64
@@ -24,14 +24,16 @@ func main() {
 			defer wg.Done()
 			r := rand.New(rand.NewSource(time.Now().UnixNano()))
 			var i uint64
+			var tmp uint64 = 0
 			for ; i < n; i++ {
 				x := r.Float64()
 				y := r.Float64()
 
 				if x*x+y*y <= 1.0 {
-					(*a)++
+					tmp++
 				}
 			}
+			*a = tmp
 		}(&nPuntosDentro[j])
 
 	}
